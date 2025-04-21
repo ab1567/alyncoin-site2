@@ -177,7 +177,9 @@ footer {
   flex-direction: column;
   gap: 1rem;
 }
-
+#contributorForm {
+  transition: all 0.3s ease-in-out;
+}
 .contributor-form label {
   font-weight: 600;
   color: #cccccc;
