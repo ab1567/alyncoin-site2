@@ -1,24 +1,25 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About AlynCoin</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    fetch("header.html")
+      .then(response => response.text())
+      .then(data => document.getElementById("header-placeholder").innerHTML = data);
+  </script>
 </head>
 <body>
-  <header>
-    <img src="assets/logo.png" alt="AlynCoin Logo" class="logo" />
-    <h1>About AlynCoin</h1>
-    <p class="subtitle">The Journey of Building a Quantum-Resistant Future</p>
-  </header>
+  <div id="header-placeholder"></div>
 
   <section class="tab-content">
     <h2>📢 Our Story</h2>
     <p>
       AlynCoin has been in development for over <strong>4 years</strong>, initially launched as <strong>AbzCoin</strong>. After years of dedicated research and engineering, the project evolved into <strong>AlynCoin</strong>, a robust, quantum-resistant blockchain with a mission to set new standards in security and decentralization.
     </p>
-
     <p>
       We’re proud to announce to the world that AlynCoin is now <strong>95% complete</strong>, with core features such as:
     </p>
@@ -44,10 +45,11 @@
     <p>
       We are entering the final stages of development, with a public testnet and mobile wallet launch planned soon. As we approach mainnet readiness, AlynCoin is opening up to developers, researchers, miners, and security pioneers to help shape a truly decentralized future.
     </p>
-
-    <p>
-      Thank you for being part of the quantum-secure revolution.
-    </p>
+    <p>Thank you for being part of the quantum-secure revolution.</p>
+    
+    <div style="text-align:center; margin-top: 2rem;">
+      <a href="index.html" class="cta-button">← Back to Home</a>
+    </div>
   </section>
 
   <footer>
