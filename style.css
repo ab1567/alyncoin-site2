@@ -7,73 +7,129 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #0f1117;
+  background-color: #0d0d0d;
   color: #f0f0f0;
   line-height: 1.6;
-  transition: background-color 0.4s, color 0.4s;
-  padding: 2rem;
+  padding: 0;
+  margin: 0;
 }
 
-body.light {
-  background-color: #f9f9f9;
-  color: #222;
-}
-
+/* Header */
 header {
   text-align: center;
-  margin-bottom: 2rem;
+  padding: 2.5rem 1rem 1rem;
+  background-color: #101010;
+  border-bottom: 1px solid #222;
 }
 
 .logo {
-  width: 100px;
+  width: 120px;
+  height: auto;
   margin-bottom: 1rem;
 }
 
 h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+  font-size: 3rem;
+  margin: 0;
+  color: #ffffff;
 }
 
 .subtitle {
+  color: #bbbbbb;
   font-size: 1.2rem;
-  color: #aaa;
-  margin-bottom: 1rem;
+  margin-top: 0.5rem;
 }
 
-#theme-toggle {
-  padding: 0.5rem 1rem;
-  background: transparent;
-  border: 2px solid #888;
-  color: inherit;
+/* Navigation */
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  background: #111;
+  border-bottom: 1px solid #222;
+}
+
+.nav a {
+  color: #00ffae;
+  text-decoration: none;
+  font-weight: bold;
   font-size: 1rem;
-  cursor: pointer;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-}
-#theme-toggle:hover {
-  background-color: #333;
-  color: #fff;
-}
-body.light #theme-toggle:hover {
-  background-color: #ddd;
-  color: #000;
+  transition: color 0.3s ease;
 }
 
-section {
-  max-width: 800px;
+.nav a:hover {
+  color: #00ffaa;
+  text-decoration: underline;
+}
+
+/* Sections */
+.tab-content {
+  max-width: 900px;
   margin: 2rem auto;
-  padding: 1rem;
+  padding: 1.8rem;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  box-shadow: 0 0 18px rgba(0, 255, 174, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.features ul,
-.status ul {
-  list-style-type: square;
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+ul {
   padding-left: 1.5rem;
 }
 
+ul li {
+  margin-bottom: 0.75rem;
+}
+
+ul li::marker {
+  content: "✅ ";
+  color: #00ffae;
+}
+
+/* Paragraphs */
+p {
+  font-size: 1.1rem;
+  color: #dddddd;
+  margin: 0.8rem 0;
+}
+
+/* Footer */
 footer {
   text-align: center;
   margin-top: 3rem;
+  padding: 1rem 0;
   font-size: 0.9rem;
   color: #777;
+  background-color: #101010;
+  border-top: 1px solid #222;
+}
+
+/* Contact Box */
+.contact {
+  margin-top: 3rem;
+}
+
+.contact-box {
+  margin-top: 1rem;
+  padding-left: 0.5rem;
+}
+
+.contact a {
+  color: #00ffae;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact a:hover {
+  color: #00ffaa;
+  text-decoration: underline;
 }
