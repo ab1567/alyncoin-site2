@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,116 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AlynCoin | Quantum-Resistant Cryptocurrency</title>
   <link rel="icon" href="assets/logo.png" type="image/png" />
-  <style>
-    body {
-      background-color: #0d0d0d;
-      color: #f1f1f1;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-    }
-    header {
-      text-align: center;
-      padding: 2.5rem 1rem 1rem;
-    }
-    .logo {
-      width: 120px;
-      height: auto;
-      margin-bottom: 1rem;
-    }
-    h1 {
-      font-size: 3rem;
-      margin: 0;
-      color: #ffffff;
-    }
-    .subtitle {
-      color: #bbbbbb;
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
-    }
-    .nav {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      padding: 1rem 0;
-      background: #111;
-    }
-    .nav a {
-      color: #00ffae;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1rem;
-    }
-    .nav a:hover {
-      text-decoration: underline;
-    }
-    .tab-content {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 1.5rem;
-      background-color: #1a1a1a;
-      border-radius: 12px;
-      box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
-    }
-    h2 {
-      font-size: 1.7rem;
-      margin-bottom: 1rem;
-      border-bottom: 1px solid #333;
-      padding-bottom: 0.5rem;
-      color: #ffffff;
-    }
-    ul {
-      padding-left: 1.5rem;
-    }
-    ul li {
-      margin-bottom: 0.75rem;
-    }
-    ul li::marker {
-      content: "✅ ";
-      color: #00ffae;
-    }
-    p {
-      font-size: 1.1rem;
-      color: #dddddd;
-    }
-    footer {
-      text-align: center;
-      margin-top: 3rem;
-      padding: 1rem 0;
-      font-size: 0.9rem;
-      color: #777;
-    }
-    /* Contact Section */
-    .contact {
-      margin-top: 3rem;
-    }
-    .contact-box {
-      margin-top: 1rem;
-      padding-left: 0.5rem;
-    }
-    .contact a {
-      color: #00ffae;
-      text-decoration: none;
-    }
-    .contact a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      fetch("header.html")
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById("shared-header").innerHTML = data;
+        });
+    });
+  </script>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <img src="assets/logo.png" alt="AlynCoin Logo" class="logo" />
-    <h1>AlynCoin</h1>
-    <p class="subtitle">The Future of Quantum-Resistant Currency</p>
-  </header>
-
-  <nav class="nav">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="videos.html">Videos</a>
-    <a href="downloads.html">Downloads</a>
-  </nav>
+  <div id="shared-header"></div>
 
   <section class="tab-content">
     <h2>🔒 Why AlynCoin?</h2>
@@ -167,64 +71,62 @@
       <li>🚧 DAO voting improvements and GUI polish ongoing</li>
     </ul>
   </section>
-  
-<section class="tab-content contact">
-  <h2>📬 Contact & Collaboration</h2>
-  <p>
-    AlynCoin is a private, community-driven initiative built by passionate contributors across the world. While our core GitHub repositories remain private for now, we are selectively onboarding developers, cryptographers, and early supporters aligned with our mission.
-  </p>
-  <p>
-    If you're an investor, researcher, or builder interested in shaping the future of quantum-secure decentralized systems, we welcome your collaboration.
-  </p>
 
-  <div class="contact-box">
-    <p><strong>Email:</strong> <a href="mailto:contact@alyncoin.com">contact@alyncoin.com</a></p>
-    <p><strong>Twitter:</strong> <a href="https://twitter.com/alyncoin" target="_blank">@alyncoin</a></p>
-    <p><strong>Instagram:</strong> <a href="https://instagram.com/alyncoin_official" target="_blank">@alyncoin_official</a></p>
-    <p><strong>GitHub (Public Assets):</strong> <a href="https://github.com/ab1567/alyncoin-site" target="_blank">github.com/ab1567/alyncoin-site</a></p>
-  </div>
+  <section class="tab-content contact">
+    <h2>📬 Contact & Collaboration</h2>
+    <p>
+      AlynCoin is a private, community-driven initiative built by passionate contributors across the world. While our core GitHub repositories remain private for now, we are selectively onboarding developers, cryptographers, and early supporters aligned with our mission.
+    </p>
+    <p>
+      If you're an investor, researcher, or builder interested in shaping the future of quantum-secure decentralized systems, we welcome your collaboration.
+    </p>
 
-<div class="contact-cta">
-  <a href="javascript:void(0);" class="cta-button" onclick="toggleContributorForm()">🤝 Become a Contributor</a>
-  <a href="downloads/roadmap.pdf" class="cta-button" target="_blank">📄 View Pitch Deck</a>
-</div>
+    <div class="contact-box">
+      <p><strong>Email:</strong> <a href="mailto:contact@alyncoin.com">contact@alyncoin.com</a></p>
+      <p><strong>Twitter:</strong> <a href="https://twitter.com/alyncoin" target="_blank">@alyncoin</a></p>
+      <p><strong>Instagram:</strong> <a href="https://instagram.com/alyncoin_official" target="_blank">@alyncoin_official</a></p>
+      <p><strong>GitHub (Public Assets):</strong> <a href="https://github.com/ab1567/alyncoin-site" target="_blank">github.com/ab1567/alyncoin-site</a></p>
+    </div>
 
-<div id="contributorForm" class="contributor-form" style="display: none;">
-  <h2>🤝 Join the AlynCoin Mission</h2>
-  <p>If you're interested in supporting AlynCoin — whether through funding, development, design, or ideas — we’d love to hear from you.</p>
+    <div class="contact-cta">
+      <a href="javascript:void(0);" class="cta-button" onclick="toggleContributorForm()">🤝 Become a Contributor</a>
+      <a href="downloads/roadmap.pdf" class="cta-button" target="_blank">📄 View Pitch Deck</a>
+    </div>
 
-  <form action="https://formspree.io/f/mwkgrygq" method="POST">
-    <label for="name">Full Name</label>
-    <input type="text" name="name" id="name" required />
+    <div id="contributorForm" class="contributor-form" style="display: none;">
+      <h2>🤝 Join the AlynCoin Mission</h2>
+      <p>If you're interested in supporting AlynCoin — whether through funding, development, design, or ideas — we’d love to hear from you.</p>
+      <form action="https://formspree.io/f/mwkgrygq" method="POST">
+        <label for="name">Full Name</label>
+        <input type="text" name="name" id="name" required />
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required />
+        <label for="interest">I'm interested in:</label>
+        <select name="interest" id="interest" required>
+          <option value="" disabled selected>Select one</option>
+          <option value="investment">💸 Investing / Funding</option>
+          <option value="development">💻 Technical Contribution</option>
+          <option value="design">🎨 Design / UI / Branding</option>
+          <option value="marketing">📢 Community / Marketing</option>
+          <option value="other">🌍 Something else</option>
+        </select>
+        <label for="message">Tell us a bit more</label>
+        <textarea name="message" id="message" rows="4" placeholder="Why do you want to join AlynCoin? What skills or ideas do you have?" required></textarea>
+        <button type="submit">Submit Application</button>
+      </form>
+    </div>
+  </section>
 
-    <label for="email">Email</label>
-    <input type="email" name="email" id="email" required />
-
-    <label for="interest">I'm interested in:</label>
-    <select name="interest" id="interest" required>
-      <option value="" disabled selected>Select one</option>
-      <option value="investment">💸 Investing / Funding</option>
-      <option value="development">💻 Technical Contribution</option>
-      <option value="design">🎨 Design / UI / Branding</option>
-      <option value="marketing">📢 Community / Marketing</option>
-      <option value="other">🌍 Something else</option>
-    </select>
-
-    <label for="message">Tell us a bit more</label>
-    <textarea name="message" id="message" rows="4" placeholder="Why do you want to join AlynCoin? What skills or ideas do you have?" required></textarea>
-
-    <button type="submit">Submit Application</button>
-  </form>
-</div>
-<script>
-  function toggleContributorForm() {
-    const form = document.getElementById("contributorForm");
-    form.style.display = form.style.display === "none" ? "block" : "none";
-    form.scrollIntoView({ behavior: "smooth" });
-  }
-</script>
   <footer>
     <p>© 2025 AlynCoin. Built with quantum resistance in mind. All rights reserved.</p>
   </footer>
+
+  <script>
+    function toggleContributorForm() {
+      const form = document.getElementById("contributorForm");
+      form.style.display = form.style.display === "none" ? "block" : "none";
+      form.scrollIntoView({ behavior: "smooth" });
+    }
+  </script>
 </body>
 </html>
