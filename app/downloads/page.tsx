@@ -31,6 +31,13 @@ export default function DownloadsPage() {
               📄 View Pitch Deck
             </a>
             <a
+              href="/downloads/AlynCoin_Whitepaper.pdf"
+              target="_blank"
+              className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl shadow-md transition"
+            >
+              📘 View Whitepaper
+            </a>
+            <a
               href="/"
               className="bg-gray-700 hover:bg-gray-600 text-white px-6 py-3 rounded-xl shadow-md transition"
             >
