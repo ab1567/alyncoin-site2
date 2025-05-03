@@ -52,7 +52,7 @@ export default function Home() {
               href="/downloads/AlynCoin_Whitepaper.pdf"
               className="px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition shadow-md"
             >
-              📄 View Whitepaper
+              📄 View Whitepaper1
             </a>
             <span className="px-6 py-3 bg-gray-600 text-white rounded-xl opacity-60 cursor-not-allowed shadow-inner">
               🍬 Wallet Coming Soon
