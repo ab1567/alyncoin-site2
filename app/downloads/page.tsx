@@ -35,7 +35,7 @@ export default function DownloadsPage() {
               target="_blank"
               className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl shadow-md transition"
             >
-              📘 View pitch deck
+              📘 View Pitch Deck
             </a>
             <a
               href="/"
