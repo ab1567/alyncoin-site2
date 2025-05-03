@@ -49,7 +49,7 @@ export default function Home() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="/downloads/pitch_deck.pdf"
+              href="/downloads/AlynCoin_Whitepaper.pdf"
               className="px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition shadow-md"
             >
               📄 View Pitch Deck
