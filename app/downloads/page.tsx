@@ -28,14 +28,14 @@ export default function DownloadsPage() {
               target="_blank"
               className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl shadow-md transition"
             >
-              📄 View Pitch Deck
+              📄 View Whitepaper
             </a>
             <a
               href="/downloads/pitch_deck.pdf"
               target="_blank"
               className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl shadow-md transition"
             >
-              📘 View Whitepaper
+              📘 View pitch deck
             </a>
             <a
               href="/"
