@@ -24,14 +24,14 @@ export default function DownloadsPage() {
 
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
             <a
-              href="/downloads/pitch_deck.pdf"
+              href="/downloads/AlynCoin_Whitepaper.pdf"
               target="_blank"
               className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl shadow-md transition"
             >
               📄 View Pitch Deck
             </a>
             <a
-              href="/downloads/AlynCoin_Whitepaper.pdf"
+              href="/downloads/pitch_deck.pdf"
               target="_blank"
               className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl shadow-md transition"
             >
