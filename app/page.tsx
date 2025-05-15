@@ -1,5 +1,6 @@
 'use client';
 import ContactSection from '../components/ContactSection';
+import React from 'react';
 
 export default function Home() {
   const FramedSection = ({
@@ -31,6 +32,14 @@ export default function Home() {
 
   return (
     <>
+      {/* 🔔 Early Mining Program Notice */}
+      <div className="w-full bg-gradient-to-r from-cyan-700 via-black to-cyan-700 text-white text-sm md:text-base font-semibold py-2 px-4 fixed top-0 z-50 animate-marquee overflow-hidden whitespace-nowrap">
+        <div className="inline-block animate-marquee-inner">
+          🚀 Early Mining Access Alert! Tag <span className="text-yellow-300 font-bold">#AlynCoin</span> on Twitter or Instagram to get whitelist access to early mining rewards & wallet features. 🧠💰 Don’t miss this chance to mine first!
+        </div>
+      </div>
+      <div className="h-10"></div> {/* Offset for fixed banner */}
+
       {/* HERO */}
       <section
         className="relative text-white min-h-screen flex items-center justify-center"
