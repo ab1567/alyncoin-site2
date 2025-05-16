@@ -10,18 +10,23 @@ export default function Home() {
     bg: string;
   }) => (
     <section
-      className="relative py-24 px-6 text-gray-200"
+      className="relative py-24 px-4 sm:px-6 md:px-12 text-gray-200"
       style={{
         backgroundImage: `url('${bg}')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
+        backgroundRepeat: 'no-repeat',
       }}
     >
-      {/* Solid dark side fill */}
-      <div className="absolute inset-0 bg-black/60"></div>
-      {/* Optional side edges with more fade */}
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+
+      {/* Optional shimmer/grid */}
+      <div className="absolute inset-0 bg-[url('/assets/glow-grid.svg')] opacity-10 bg-center bg-cover mix-blend-screen pointer-events-none"></div>
+
+      {/* Gradient edge */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-black/70"></div>
+
       {/* Container */}
       <div className="relative z-10 w-full flex justify-center">
         <div className="w-full max-w-[1200px]">{children}</div>
@@ -38,19 +43,21 @@ export default function Home() {
           backgroundImage: "url('/assets/image3.png')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
+          backgroundRepeat: 'no-repeat',
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/80"></div>
         <div className="relative z-10 text-center max-w-2xl px-6 py-32">
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-4 drop-shadow text-cyan-300">AlynCoin</h1>
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-4 bg-gradient-to-r from-cyan-300 via-blue-400 to-purple-500 text-transparent bg-clip-text drop-shadow-lg">
+            AlynCoin
+          </h1>
           <p className="text-lg md:text-xl text-gray-200 mb-6">
             Quantum-Resistant. zk-STARK Powered. A Custom L1 Chain Built for the Future.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
               href="/downloads/AlynCoin_Whitepaper.pdf"
-              className="px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition shadow-md"
+              className="px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition shadow-md animate-pulse"
             >
               📄 View Whitepaper
             </a>
@@ -58,14 +65,16 @@ export default function Home() {
               🍬 Wallet Coming Soon
             </span>
           </div>
-          <p className="mt-10 text-sm text-gray-400">Scroll to explore ↓</p>
+          <p className="mt-10 text-sm text-cyan-300 animate-bounce">↓ Scroll to Explore</p>
         </div>
       </section>
 
       {/* WHY */}
       <FramedSection bg="/assets/image1.png">
         <div className="text-center">
-          <h2 className="text-3xl font-bold mb-6 text-cyan-300">🔐 Why AlynCoin?</h2>
+          <h2 className="text-3xl font-extrabold mb-6 bg-gradient-to-r from-cyan-300 to-blue-500 text-transparent bg-clip-text drop-shadow-lg">
+            🔐 Why AlynCoin?
+          </h2>
           <p className="mb-4 text-gray-100">
             AlynCoin is a next-generation quantum-secure blockchain built from the ground up for speed, privacy,
             decentralization, and post-quantum resistance. Originally started as <strong>AbzCoin</strong>, it evolved into
@@ -81,8 +90,10 @@ export default function Home() {
       {/* FEATURES */}
       <FramedSection bg="/assets/image6.png">
         <div>
-          <h2 className="text-3xl font-bold text-center mb-10 text-cyan-300">🔐 Quantum-Ready Features</h2>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-gray-300">
+          <h2 className="text-3xl font-extrabold text-center mb-10 bg-gradient-to-r from-cyan-300 to-blue-500 text-transparent bg-clip-text drop-shadow-lg">
+            🔐 Quantum-Ready Features
+          </h2>
+          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-300 text-base md:text-lg leading-relaxed">
             <li>• <strong>Post-Quantum Signatures</strong> – Falcon + Dilithium security</li>
             <li>• <strong>zk-STARK Proofs</strong> – Privacy and scalability built-in</li>
             <li>• <strong>Hybrid PoW</strong> – BLAKE3 + Keccak for resilient mining</li>
@@ -99,8 +110,10 @@ export default function Home() {
       {/* PROGRESS */}
       <FramedSection bg="/assets/image13.png">
         <div>
-          <h2 className="text-3xl font-bold mb-6 drop-shadow text-cyan-300">🚀 Current Progress</h2>
-          <ul className="list-disc list-inside text-gray-300 space-y-3">
+          <h2 className="text-3xl font-extrabold mb-6 bg-gradient-to-r from-cyan-300 to-blue-500 text-transparent bg-clip-text drop-shadow-lg">
+            🚀 Current Progress
+          </h2>
+          <ul className="list-disc list-inside text-gray-300 space-y-3 text-base md:text-lg leading-relaxed">
             <li>✅ Blockchain Core with hybrid PoW engine is complete</li>
             <li>✅ Falcon & Dilithium signature support integrated</li>
             <li>✅ GUI + CLI Wallet with L1/L2 transactions and mining</li>
@@ -116,8 +129,10 @@ export default function Home() {
       {/* BUILDING */}
       <FramedSection bg="/assets/image5.png">
         <div>
-          <h2 className="text-3xl font-bold mb-6 text-cyan-300">🧱 What We're Building</h2>
-          <ul className="list-disc list-inside text-gray-300 space-y-3">
+          <h2 className="text-3xl font-extrabold mb-6 bg-gradient-to-r from-cyan-300 to-blue-500 text-transparent bg-clip-text drop-shadow-lg">
+            🧱 What We're Building
+          </h2>
+          <ul className="list-disc list-inside text-gray-300 space-y-3 text-base md:text-lg leading-relaxed">
             <li>💡 A custom non-EVM Layer-1 with no legacy baggage</li>
             <li>🔐 Zero-knowledge proofs using <strong>Winterfell zk-STARKs</strong></li>
             <li>🧠 Fully quantum-safe key systems (Falcon, Dilithium)</li>
