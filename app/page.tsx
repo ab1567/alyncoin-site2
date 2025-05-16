@@ -18,16 +18,9 @@ export default function Home() {
         backgroundRepeat: 'no-repeat',
       }}
     >
-      {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
-
-      {/* Optional shimmer/grid */}
       <div className="absolute inset-0 bg-[url('/assets/glow-grid.svg')] opacity-10 bg-center bg-cover mix-blend-screen pointer-events-none"></div>
-
-      {/* Gradient edge */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-black/70"></div>
-
-      {/* Container */}
       <div className="relative z-10 w-full flex justify-center">
         <div className="w-full max-w-[1200px]">{children}</div>
       </div>
@@ -113,15 +106,15 @@ export default function Home() {
           <h2 className="text-3xl font-extrabold mb-6 bg-gradient-to-r from-cyan-300 to-blue-500 text-transparent bg-clip-text drop-shadow-lg">
             🚀 Current Progress
           </h2>
-          <ul className="list-disc list-inside text-gray-300 space-y-3 text-base md:text-lg leading-relaxed">
-            <li>✅ Blockchain Core with hybrid PoW engine is complete</li>
-            <li>✅ Falcon & Dilithium signature support integrated</li>
-            <li>✅ GUI + CLI Wallet with L1/L2 transactions and mining</li>
-            <li>✅ zk-STARK Proofs and Recursive Rollups functional</li>
-            <li>✅ NFT and Atomic Swap protocols implemented</li>
-            <li>✅ Live node sync + Self-healing sync logic verified</li>
-            <li>🚧 Public Testnet and Mobile Wallet in progress</li>
-            <li>🚧 DAO voting improvements and GUI polish ongoing</li>
+          <ul className="space-y-4 text-base md:text-lg text-gray-300 leading-relaxed">
+            <li>✅ <span className="text-white">Blockchain Core</span> with hybrid PoW engine is complete</li>
+            <li>✅ <span className="text-white">Falcon & Dilithium</span> signature support integrated</li>
+            <li>✅ <span className="text-white">GUI + CLI Wallet</span> with L1/L2 transactions and mining</li>
+            <li>✅ <span className="text-white">zk-STARK Proofs</span> and Recursive Rollups functional</li>
+            <li>✅ <span className="text-white">NFT and Atomic Swap</span> protocols implemented</li>
+            <li>✅ <span className="text-white">Live node sync</span> + Self-healing sync logic verified</li>
+            <li>🚧 <span className="text-white">Public Testnet</span> and Mobile Wallet in progress</li>
+            <li>🚧 <span className="text-white">DAO voting improvements</span> and GUI polish ongoing</li>
           </ul>
         </div>
       </FramedSection>
@@ -132,7 +125,7 @@ export default function Home() {
           <h2 className="text-3xl font-extrabold mb-6 bg-gradient-to-r from-cyan-300 to-blue-500 text-transparent bg-clip-text drop-shadow-lg">
             🧱 What We're Building
           </h2>
-          <ul className="list-disc list-inside text-gray-300 space-y-3 text-base md:text-lg leading-relaxed">
+          <ul className="space-y-4 text-base md:text-lg text-gray-300 leading-relaxed">
             <li>💡 A custom non-EVM Layer-1 with no legacy baggage</li>
             <li>🔐 Zero-knowledge proofs using <strong>Winterfell zk-STARKs</strong></li>
             <li>🧠 Fully quantum-safe key systems (Falcon, Dilithium)</li>
