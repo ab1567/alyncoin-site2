@@ -1,5 +1,4 @@
 'use client';
-import ThemeToggle from './ThemeToggle';
 
 interface SidebarProps {
   open: boolean;
@@ -26,9 +25,6 @@ export default function Sidebar({ open, onClose }: SidebarProps) {
             <a href="/downloads" onClick={onClose} className="hover:text-cyan-500">Downloads</a>
             <a href="/videos" onClick={onClose} className="hover:text-cyan-500">Videos</a>
           </nav>
-          <div className="pt-4 border-t border-gray-200 dark:border-gray-800">
-            <ThemeToggle />
-          </div>
         </div>
       </aside>
     </>
