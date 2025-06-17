@@ -19,7 +19,7 @@ export default function ContactSection() {
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-black/70"></div>
 
       <div className="relative z-10 max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold mb-6 text-cyan-300">📬 Contact & Collaboration</h2>
+        <h2 className="text-3xl font-bold mb-6 text-cyan-300">Contact & Collaboration</h2>
         <p className="text-gray-300 mb-4">
           AlynCoin is a private, community-driven initiative built by passionate contributors across the world.
           While our core GitHub repositories remain private for now, we are selectively onboarding developers,
@@ -42,13 +42,13 @@ export default function ContactSection() {
             onClick={() => setShowForm(!showForm)}
             className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded-lg shadow transition"
           >
-            🤝 Become a Contributor
+            Become a Contributor
           </button>
         </div>
 
         {showForm && (
           <div id="contributorForm" className="bg-white/5 p-6 rounded-xl border border-gray-700">
-            <h3 className="text-2xl font-semibold mb-2 text-white">🤝 Join the AlynCoin Mission</h3>
+            <h3 className="text-2xl font-semibold mb-2 text-white">Join the AlynCoin Mission</h3>
             <p className="text-gray-300 mb-4">
               If you're interested in supporting AlynCoin — whether through funding, development, design, or ideas —
               we’d love to hear from you.
@@ -91,11 +91,11 @@ export default function ContactSection() {
                   className="w-full p-2 bg-black/70 text-white border border-gray-600 rounded"
                 >
                   <option value="" disabled>Select one</option>
-                  <option value="investment">💸 Investing / Funding</option>
-                  <option value="development">💻 Technical Contribution</option>
-                  <option value="design">🎨 Design / UI / Branding</option>
-                  <option value="marketing">📢 Community / Marketing</option>
-                  <option value="other">🌍 Something else</option>
+                  <option value="investment">Investing / Funding</option>
+                  <option value="development">Technical Contribution</option>
+                  <option value="design">Design / UI / Branding</option>
+                  <option value="marketing">Community / Marketing</option>
+                  <option value="other">Other</option>
                 </select>
               </div>
 

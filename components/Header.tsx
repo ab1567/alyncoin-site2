@@ -1,6 +1,5 @@
 'use client';
 import { useState } from 'react';
-import ThemeToggle from './ThemeToggle';
 import Sidebar from './Sidebar';
 
 export default function Header() {
@@ -10,10 +9,10 @@ export default function Header() {
     <header className="sticky top-10 z-40 bg-white/70 dark:bg-black/70 backdrop-blur-lg border-b border-cyan-800 shadow-sm">
       <div className="max-w-7xl mx-auto px-6 py-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
 
-        {/* Mobile Menu Button */}
+        {/* Sidebar Toggle */}
         <button
           onClick={() => setSidebarOpen(true)}
-          className="sm:hidden p-2 rounded-md bg-cyan-600 text-white self-start"
+          className="p-2 rounded-md bg-cyan-600 text-white self-start"
           aria-label="Open menu"
         >
           ☰
@@ -49,8 +48,6 @@ export default function Header() {
             </a>
           ))}
         </nav>
-
-        <ThemeToggle />
 
       </div>
       <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />

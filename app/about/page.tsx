@@ -32,7 +32,7 @@ export default function AboutPage() {
 
       {/* OUR STORY — image10 (brain) */}
       <FramedSection bg="/assets/image10.png" position="top center" height="pt-44 pb-56">
-        <h2 className="text-4xl font-bold mb-6 text-cyan-300">📢 Our Story</h2>
+        <h2 className="text-4xl font-bold mb-6 text-cyan-300">Our Story</h2>
         <p className="mb-4 text-gray-100">
           AlynCoin has been in development for over <strong>4 years</strong>, initially started as <strong>AbzCoin</strong>.
           After years of dedicated research and engineering, the project evolved into <strong>AlynCoin</strong>, a robust,
@@ -45,7 +45,7 @@ export default function AboutPage() {
 
       {/* WHAT MAKES UNIQUE — directly on image9 (lock) */}
       <FramedSection bg="/assets/image9.png" position="center" height="pt-36 pb-40">
-        <h2 className="text-4xl font-bold mb-6 text-cyan-300">🚀 What Makes AlynCoin Unique</h2>
+        <h2 className="text-4xl font-bold mb-6 text-cyan-300">What Makes AlynCoin Unique</h2>
         <ul className="list-disc list-inside text-left text-gray-300 space-y-3 max-w-xl mx-auto">
           <li><strong>Quantum-Resistant by Design</strong> – Built from scratch with Falcon and Dilithium</li>
           <li><strong>Zero-Knowledge First</strong> – Recursive zk-STARKs enable private, scalable rollups</li>
@@ -57,7 +57,7 @@ export default function AboutPage() {
 
       {/* VISION AHEAD — image4 */}
       <FramedSection bg="/assets/image4.png" position="bottom center">
-        <h2 className="text-4xl font-bold mb-6 text-cyan-300">🔭 Vision Ahead</h2>
+        <h2 className="text-4xl font-bold mb-6 text-cyan-300">Vision Ahead</h2>
         <p className="mb-4 text-gray-100">
           We’re entering final development with testnet and mobile wallet launch near. AlynCoin is welcoming developers,
           researchers, and pioneers to help shape the future of decentralized cryptography.
