@@ -52,13 +52,13 @@ export default function Home() {
               href="/downloads/AlynCoin_Whitepaper.pdf"
               className="px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition shadow-md animate-pulse"
             >
-              View Whitepaper
+              📄 View Whitepaper
             </a>
             <span className="px-6 py-3 bg-gray-600 text-white rounded-xl opacity-60 cursor-not-allowed shadow-inner">
-              Wallet Coming Soon
+              🍬 Wallet Coming Soon
             </span>
           </div>
-          <p className="mt-10 text-sm text-cyan-300 animate-bounce">Scroll to Explore</p>
+          <p className="mt-10 text-sm text-cyan-300 animate-bounce">↓ Scroll to Explore</p>
         </div>
       </section>
 
@@ -66,7 +66,7 @@ export default function Home() {
       <FramedSection bg="/assets/image1.png">
         <div className="text-center">
           <h2 className="text-3xl font-extrabold mb-6 bg-gradient-to-r from-cyan-300 to-blue-500 text-transparent bg-clip-text drop-shadow-lg">
-            Why AlynCoin?
+            🔐 Why AlynCoin?
           </h2>
           <p className="mb-4 text-gray-100">
             AlynCoin is a next-generation quantum-secure blockchain built from the ground up for speed, privacy,
@@ -84,7 +84,7 @@ export default function Home() {
       <FramedSection bg="/assets/image6.png">
         <div>
           <h2 className="text-3xl font-extrabold text-center mb-10 bg-gradient-to-r from-cyan-300 to-blue-500 text-transparent bg-clip-text drop-shadow-lg">
-            Quantum-Ready Features
+            🔐 Quantum-Ready Features
           </h2>
           <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-300 text-base md:text-lg leading-relaxed">
             <li>• <strong>Post-Quantum Signatures</strong> – Falcon + Dilithium security</li>
@@ -104,7 +104,7 @@ export default function Home() {
       <FramedSection bg="/assets/image13.png">
         <div>
           <h2 className="text-3xl font-extrabold mb-6 bg-gradient-to-r from-cyan-300 to-blue-500 text-transparent bg-clip-text drop-shadow-lg">
-            Current Progress
+            🚀 Current Progress
           </h2>
           <ul className="space-y-4 text-base md:text-lg text-gray-300 leading-relaxed">
             <li>✅ <span className="text-white">Blockchain Core</span> with hybrid PoW engine is complete</li>
@@ -123,15 +123,15 @@ export default function Home() {
       <FramedSection bg="/assets/image5.png">
         <div>
           <h2 className="text-3xl font-extrabold mb-6 bg-gradient-to-r from-cyan-300 to-blue-500 text-transparent bg-clip-text drop-shadow-lg">
-            What We're Building
+            🧱 What We're Building
           </h2>
           <ul className="space-y-4 text-base md:text-lg text-gray-300 leading-relaxed">
-            <li>A custom non-EVM Layer-1 with no legacy baggage</li>
-            <li>Zero-knowledge proofs using <strong>Winterfell zk-STARKs</strong></li>
-            <li>Fully quantum-safe key systems (Falcon, Dilithium)</li>
-            <li>Native token with elastic difficulty & modular emission</li>
-            <li>zk-based identity, zk-NFTs, DAO governance, rollups</li>
-            <li>Recursive proof support for scalability & compression</li>
+            <li>💡 A custom non-EVM Layer-1 with no legacy baggage</li>
+            <li>🔐 Zero-knowledge proofs using <strong>Winterfell zk-STARKs</strong></li>
+            <li>🧠 Fully quantum-safe key systems (Falcon, Dilithium)</li>
+            <li>🪙 Native token with elastic difficulty + modular emission</li>
+            <li>🧹 zk-based identity, zk-NFTs, DAO governance, rollups</li>
+            <li>🔄 Recursive proof support for scalability & compression</li>
           </ul>
         </div>
       </FramedSection>
