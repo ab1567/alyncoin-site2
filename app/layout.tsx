@@ -9,12 +9,12 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <body className="bg-black text-white">
         {/* 🔔 Global Early Mining Notice */}
         <div className="fixed top-0 left-0 w-full bg-gradient-to-r from-cyan-700 via-black to-cyan-700 text-white text-sm md:text-base font-semibold py-2 z-50 overflow-hidden">
           <div className="animate-marquee whitespace-nowrap min-w-full px-4">
-            Early Mining Access Alert! Tag <span className="text-yellow-300 font-bold">#AlynCoin</span> on Twitter or Instagram to get whitelist access to early mining rewards and wallet features. Don’t miss this chance to mine early.
+            🚀 Early Mining Access Alert! Tag <span className="text-yellow-300 font-bold">#AlynCoin</span> on Twitter or Instagram to get whitelist access to early mining rewards & wallet features. 🧠 Don’t miss this chance to mine early!
           </div>
         </div>
 
