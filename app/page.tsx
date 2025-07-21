@@ -49,6 +49,12 @@ export default function Home() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
+              href="/downloads/AlyncoinGPTresearch.pdf"
+              className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-600 text-white rounded-xl hover:from-purple-600 hover:to-pink-700 transition shadow-md"
+            >
+              🧠 GPT Research
+            </a>
+            <a
               href="/downloads/AlynCoin_Whitepaper.pdf"
               className="px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition shadow-md animate-pulse"
             >
