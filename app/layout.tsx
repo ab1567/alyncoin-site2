@@ -1,28 +1,24 @@
-import './globals.css';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import '@/app/globals.css';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 export const metadata = {
-  title: 'AlynCoin | Quantum-Resistant Cryptocurrency',
-  description: 'Quantum-secure Layer-1 blockchain with zk-STARKs and post-quantum signatures.',
+  title: 'AlynCoin – Quantum‑Resistant Layer‑1',
+  description: 'AlynCoin is a pioneering Layer‑1 chain combining post‑quantum signatures, zk‑STARK proofs and a hybrid PoW consensus to deliver unmatched security, scalability and privacy.',
 };
 
+/**
+ * Root layout wraps every page with the site header, footer and a dark
+ * background. The children prop is rendered inside a main element with
+ * a maximum width to keep content comfortably readable on large
+ * displays.
+ */
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className="bg-black text-white">
-        {/* 🔔 Global Early Mining Notice */}
-        <div className="fixed top-0 left-0 w-full bg-gradient-to-r from-cyan-700 via-black to-cyan-700 text-white text-sm md:text-base font-semibold py-2 z-50 overflow-hidden">
-          <div className="animate-marquee whitespace-nowrap min-w-full px-4">
-            🚀 Early Mining Access Alert! Tag <span className="text-yellow-300 font-bold">#AlynCoin</span> on Twitter or Instagram to get whitelist access to early mining rewards & wallet features. 🧠 Don’t miss this chance to mine early!
-          </div>
-        </div>
-
-        {/* Push content below banner */}
-        <div className="h-10"></div>
-
+    <html lang="en" className="dark">
+      <body>
         <Header />
-        <main className="tab-content">{children}</main>
+        <main className="mx-auto max-w-screen-xl">{children}</main>
         <Footer />
       </body>
     </html>

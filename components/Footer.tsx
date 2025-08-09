@@ -1,7 +1,22 @@
 export default function Footer() {
   return (
-    <footer className="text-center py-6 px-4 mt-10 border-t border-gray-800 bg-black text-gray-500 text-sm">
-      © 2025 AlynCoin. Built with quantum resistance in mind.
+    <footer className="border-t border-gray-700 mt-16 py-8 px-4 md:px-8 dark:bg-black dark:bg-opacity-80 backdrop-blur-md">
+      <div className="mx-auto max-w-screen-xl text-center text-sm text-gray-400">
+        <p>
+          &copy; {new Date().getFullYear()} AlynCoin. All rights reserved.
+        </p>
+        <p className="mt-2">
+          Built with ❤ by the AlynCoin community.{' '}
+          <a
+            href="https://github.com/ab1567/alyncoin-site2"
+            className="text-teal-400 hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Contribute on GitHub
+          </a>
+        </p>
+      </div>
     </footer>
   );
 }
