@@ -22,13 +22,15 @@ export default function Header() {
     { href: '/mining', label: 'Mining' },
     { href: '/progress', label: 'Progress' },
     { href: '/downloads', label: 'Downloads' },
+    { href: '/community', label: 'Community' },
+    { href: '/gallery', label: 'Gallery' },
   ];
 
   return (
     <div className="sticky top-0 z-50 w-full">
       {/* Promotional banner */}
       <div className="bg-teal-700 text-white text-sm py-1 text-center">
-        🚀 Don’t miss this chance to mine early!
+        🚀 Expected launch in September — join for early access!
       </div>
       {/* Main nav */}
       <header className="bg-black bg-opacity-80 backdrop-blur-md">
