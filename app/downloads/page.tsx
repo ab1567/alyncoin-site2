@@ -22,7 +22,7 @@ export default function DownloadsPage() {
             CLI binaries, mobile wallets, and GUI releases will be published once we launch the public testnet.
           </p>
 
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4">
             <a
               href="/downloads/AlynCoin_Whitepaper.pdf"
               target="_blank"
@@ -36,6 +36,13 @@ export default function DownloadsPage() {
               className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl shadow-md transition"
             >
               📘 View Pitch Deck
+            </a>
+            <a
+              href="/downloads/AlyncoinGPTresearch.pdf"
+              target="_blank"
+              className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-xl shadow-md transition"
+            >
+              🤖 GPT Research
             </a>
             <a
               href="/"

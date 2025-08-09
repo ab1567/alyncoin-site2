@@ -1,6 +1,7 @@
 "use client";
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
@@ -18,12 +19,14 @@ export default function Header() {
     { label: 'Governance', href: '/governance' },
     { label: 'Mining', href: '/mining' },
     { label: 'Progress', href: '/progress' },
+    { label: 'Downloads', href: '/downloads' },
   ];
   return (
     <header className="sticky top-0 z-50 backdrop-blur bg-white/80 dark:bg-gray-900/80 border-b border-gray-200 dark:border-gray-700">
       <div className="mx-auto max-w-7xl flex items-center justify-between px-4 py-4">
-        <Link href="/" className="text-2xl font-semibold tracking-tight hover:text-primary dark:hover:text-primary">
-          AlynCoin
+        <Link href="/" className="flex items-center space-x-2 hover:text-primary dark:hover:text-primary">
+          <Image src="/assets/logo.png" alt="AlynCoin logo" width={32} height={32} />
+          <span className="text-2xl font-semibold tracking-tight">AlynCoin</span>
         </Link>
         {/* Desktop navigation */}
         <nav className="hidden md:flex space-x-6 text-sm font-medium">
