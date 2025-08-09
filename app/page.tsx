@@ -16,7 +16,7 @@ export default function HomePage() {
     <div className="space-y-24 py-10">
       {/* Hero Section */}
       <section
-        className="relative flex flex-col items-center text-center pt-16 sm:pt-24 pb-20"
+        className="relative flex flex-col items-center justify-center text-center min-h-screen pt-16 sm:pt-24"
         style={{
           backgroundImage: "url('/assets/image3.png')",
           backgroundSize: 'cover',
@@ -176,6 +176,32 @@ export default function HomePage() {
             description="Official miner release coming September 2025—join our community to get early access."
           />
         </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section
+        id="about"
+        className="relative py-24 text-center"
+        style={{
+          backgroundImage: "url('/assets/image10.png')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="relative z-10 space-y-8">
+          <h2 className="text-3xl sm:text-4xl font-bold">About AlynCoin</h2>
+          <p className="max-w-4xl mx-auto text-gray-300">
+            AlynCoin has been built from scratch over four years to deliver a quantum‑resistant,
+            community‑driven blockchain. Discover the story behind the project and where we're heading next.
+          </p>
+          <Link
+            href="/about"
+            className="inline-flex items-center justify-center rounded-md border border-primary px-6 py-3 text-primary font-medium shadow hover:bg-primary/10 transition-colors"
+          >
+            Learn More
+          </Link>
         </div>
       </section>
 
