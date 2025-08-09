@@ -1,111 +1,83 @@
 "use client";
 
-import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
+import DualLineChart from '@/components/DualLineChart';
 
 /**
- * Tokenomics page
- *
- * Provides a breakdown of the ALYN token supply, initial distribution, emission schedule,
- * and fee allocation. A simple line chart visualizes the exponential decay of block rewards
- * over time with a tail emission.
+ * Tokenomics page describes the monetary policy of AlynCoin, displays the
+ * premine allocation table and visualises the emission schedule. The
+ * emission schedule is approximated with a simple exponential decay for
+ * illustrative purposes.
  */
 export default function TokenomicsPage() {
-  // Precomputed sample data for the reward decay curve. In production this would be
-  // generated dynamically or loaded from the blockchain state.
-  const emissionData = [
-    { block: 0, reward: 25 },
-    { block: 1_000, reward: 10.1601 },
-    { block: 2_000, reward: 4.1291 },
-    { block: 5_000, reward: 0.2772 },
-    { block: 10_000, reward: 0.0031 },
-    { block: 20_000, reward: 0.0000 },
+  // Define the premine distribution
+  const premine = [
+    { allocation: 'Airdrops', amount: 1_000_000 },
+    { allocation: 'Liquidity', amount: 1_000_000 },
+    { allocation: 'Investors', amount: 3_000_000 },
+    { allocation: 'Development', amount: 2_000_000 },
+    { allocation: 'Exchange Listings', amount: 1_000_000 },
+    { allocation: 'Team / Founder', amount: 2_000_000 },
   ];
+  // Generate an emission schedule: block heights vs reward per block and cumulative supply
+  const emissionData: any[] = [];
+  let supply = 10_000_000; // initial premine
+  let reward = 25;
+  const tailReward = 0.25;
+  for (let i = 0; i <= 100; i += 2) {
+    // compute supply and reward at this checkpoint (every 2 blocks for brevity)
+    if (supply < 100_000_000) {
+      supply += reward * 2;
+      reward = reward * Math.pow(0.9991, 2); // 0.09% decay per block approximated
+      if (reward < tailReward) reward = tailReward;
+    }
+    emissionData.push({
+      block: i,
+      reward: parseFloat(reward.toFixed(2)),
+      supply: Math.min(supply, 100_000_000),
+    });
+  }
+
   return (
-    <div className="space-y-12 py-10">
-      <h1 className="text-3xl sm:text-4xl font-bold text-center mb-4">Tokenomics</h1>
-      <p className="max-w-4xl mx-auto text-center text-gray-600 dark:text-gray-300">
+    <div className="section max-w-6xl mx-auto space-y-20">
+      <h1 className="section-title">Tokenomics</h1>
+      <p className="max-w-3xl mx-auto text-gray-300 text-center">
         AlynCoin’s monetary policy balances scarcity, fairness and sustainability. The total
-        supply is capped at <strong>100 million ALYN</strong>. At genesis, 10 million ALYN were
-        pre‑mined and distributed to strategic stakeholders as detailed below. Block rewards
-        decline exponentially as circulating supply approaches the cap, with a permanent tail
-        emission to incentivize miners in perpetuity. Additionally, a portion of every transaction
-        fee is burned and another portion funds ongoing development via the DAO treasury.
+        supply is capped at <span className="text-white font-semibold">100 million ALYN</span>.
+        At genesis, 10 million ALYN were pre‑mined and distributed to strategic stakeholders
+        as detailed below. Block rewards decline exponentially as circulating supply approaches
+        the cap, with a permanent tail emission to incentivise miners in perpetuity. Additionally,
+        a portion of every transaction fee is burned and another portion funds ongoing development
+        via the DAO treasury.
       </p>
 
       {/* Distribution Table */}
       <div className="overflow-x-auto">
-        <table className="min-w-full border border-gray-200 dark:border-gray-700 divide-y divide-gray-200 dark:divide-gray-700 text-sm">
-          <thead className="bg-gray-50 dark:bg-gray-800">
+        <table className="min-w-full divide-y divide-gray-700">
+          <thead>
             <tr>
-              <th className="px-4 py-2 text-left font-semibold">Allocation</th>
-              <th className="px-4 py-2 text-right font-semibold">Amount (ALYN)</th>
+              <th className="px-4 py-3 text-left text-sm font-semibold text-teal-400 uppercase tracking-wider">Allocation</th>
+              <th className="px-4 py-3 text-right text-sm font-semibold text-teal-400 uppercase tracking-wider">Amount (ALYN)</th>
             </tr>
           </thead>
-          <tbody className="bg-white dark:bg-gray-900 divide-y divide-gray-200 dark:divide-gray-700">
-            <tr>
-              <td className="px-4 py-2">Airdrops</td>
-              <td className="px-4 py-2 text-right">1,000,000</td>
-            </tr>
-            <tr>
-              <td className="px-4 py-2">Liquidity</td>
-              <td className="px-4 py-2 text-right">1,000,000</td>
-            </tr>
-            <tr>
-              <td className="px-4 py-2">Investors</td>
-              <td className="px-4 py-2 text-right">3,000,000</td>
-            </tr>
-            <tr>
-              <td className="px-4 py-2">Development</td>
-              <td className="px-4 py-2 text-right">2,000,000</td>
-            </tr>
-            <tr>
-              <td className="px-4 py-2">Exchange Listings</td>
-              <td className="px-4 py-2 text-right">1,000,000</td>
-            </tr>
-            <tr>
-              <td className="px-4 py-2">Team / Founder</td>
-              <td className="px-4 py-2 text-right">2,000,000</td>
-            </tr>
+          <tbody className="divide-y divide-gray-800">
+            {premine.map((row) => (
+              <tr key={row.allocation} className="bg-black bg-opacity-40 hover:bg-black hover:bg-opacity-60">
+                <td className="px-4 py-3 text-sm text-white">{row.allocation}</td>
+                <td className="px-4 py-3 text-sm text-right text-gray-300">{row.amount.toLocaleString()}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
 
-      {/* Emission Chart */}
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-2xl font-semibold mb-4 text-center">Block Reward Decay</h2>
-        <p className="text-center text-sm text-gray-600 dark:text-gray-400 mb-6">
-          Rewards start at 25 ALYN and decay by approximately 0.09% per block. A perpetual
-          tail emission of 0.25 ALYN per block ensures ongoing miner incentives once rewards
-          stabilize near zero.
-        </p>
-        <div className="h-64">
-          <ResponsiveContainer width="100%" height="100%">
-            <LineChart data={emissionData} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
-              <CartesianGrid strokeDasharray="3 3" className="stroke-gray-200 dark:stroke-gray-700" />
-              <XAxis dataKey="block" tickFormatter={(v) => v.toLocaleString()} />
-              <YAxis label={{ value: 'Reward (ALYN)', angle: -90, position: 'insideLeft' }} />
-              <Tooltip
-                contentStyle={{ backgroundColor: '#fff', color: '#000', borderRadius: '0.375rem', padding: '0.5rem' }}
-                formatter={(value: number) => `${value.toFixed(4)} ALYN`}
-              />
-              <Line type="monotone" dataKey="reward" stroke="#008080" strokeWidth={2} dot={{ r: 1 }} />
-            </LineChart>
-          </ResponsiveContainer>
-        </div>
-      </div>
-
-      {/* Fee Allocation Section */}
-      <div className="space-y-4 max-w-4xl mx-auto">
-        <h2 className="text-2xl font-semibold">Fee Allocation & Burn Mechanism</h2>
-        <p className="text-gray-600 dark:text-gray-300">
-          Every transaction on AlynCoin pays a small fee. Part of this fee is permanently
-          removed (“burned”), dynamically adjusting to network activity and reducing the
-          circulating supply. The remainder funds the DAO treasury, which finances ongoing
-          development, security audits and ecosystem grants. This mechanism balances supply
-          reduction with reinvestment, capping total supply at 100 million while ensuring
-          continuous improvement.
-        </p>
-      </div>
+      {/* Emission Schedule Chart */}
+      <DualLineChart
+        data={emissionData}
+        xDataKey="block"
+        lines={[{ dataKey: 'reward', label: 'Block Reward (ALYN)', color: '#14b8a6' }, { dataKey: 'supply', label: 'Total Supply', color: '#6366f1' }]}
+        yLabel="ALYN"
+        title="Emission Schedule & Total Supply"
+      />
     </div>
   );
 }

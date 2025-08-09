@@ -2,70 +2,83 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 
 /**
- * Top navigation bar component.
+ * Site header component.
  *
- * Renders a responsive header with the AlynCoin logo and primary navigation links.
- * On mobile screens a hamburger menu toggles the link list.
+ * A sticky header that displays a small promotional banner above a dark
+ * navigation bar. The navigation collapses into a hamburger menu on
+ * smaller screens. Active links are highlighted with a coloured
+ * accent.
  */
 export default function Header() {
   const [open, setOpen] = useState(false);
+
   const navItems = [
-    { label: 'Home', href: '/' },
-    { label: 'Tokenomics', href: '/tokenomics' },
-    { label: 'Governance', href: '/governance' },
-    { label: 'Mining', href: '/mining' },
-    { label: 'Progress', href: '/progress' },
+    { href: '/', label: 'Home' },
+    { href: '/tokenomics', label: 'Tokenomics' },
+    { href: '/governance', label: 'Governance' },
+    { href: '/mining', label: 'Mining' },
+    { href: '/progress', label: 'Progress' },
+    { href: '/downloads', label: 'Downloads' },
   ];
+
   return (
-    <header className="sticky top-0 z-50 bg-gray-900/90 border-b border-gray-800 shadow-md">
-      <div className="mx-auto max-w-7xl flex items-center justify-between px-4 py-3">
-        <Link href="/" className="flex items-center space-x-3">
-          <Image src="/assets/logo.png" alt="AlynCoin logo" width={40} height={40} className="h-10 w-10 object-contain" />
-          <span className="text-2xl font-semibold tracking-tight text-white">AlynCoin</span>
-        </Link>
-        {/* Desktop navigation */}
-        <nav className="hidden md:flex space-x-6 text-sm font-medium">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="text-gray-300 hover:text-white transition-colors"
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
-        {/* Mobile hamburger toggle */}
-        <button
-          type="button"
-          className="md:hidden inline-flex items-center justify-center rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-primary"
-          aria-label="Toggle navigation menu"
-          onClick={() => setOpen(!open)}
-        >
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+    <div className="sticky top-0 z-50 w-full">
+      {/* Promotional banner */}
+      <div className="bg-teal-700 text-white text-sm py-1 text-center">
+        🚀 Don’t miss this chance to mine early!
       </div>
-      {/* Mobile menu */}
-      {open && (
-        <div className="md:hidden border-t border-gray-800 bg-gray-900">
-          <nav className="px-4 py-2 space-y-1">
-            {navItems.map((item) => (
+      {/* Main nav */}
+      <header className="bg-black bg-opacity-80 backdrop-blur-md">
+        <div className="mx-auto flex max-w-screen-xl items-center justify-between px-4 py-3 md:py-4">
+          {/* Logo */}
+          <Link href="/" className="flex items-center space-x-2">
+            <img
+              src="/logo.png"
+              alt="AlynCoin logo"
+              className="h-8 w-8 object-contain"
+            />
+            <span className="text-xl font-bold text-white">AlynCoin</span>
+          </Link>
+          {/* Desktop nav */}
+          <nav className="hidden md:flex space-x-4">
+            {navItems.map(({ href, label }) => (
               <Link
-                key={item.href}
-                href={item.href}
-                className="block px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-gray-800"
-                onClick={() => setOpen(false)}
+                key={href}
+                href={href}
+                className="text-gray-300 hover:text-white px-3 py-2 rounded-full transition-colors duration-200"
               >
-                {item.label}
+                {label}
               </Link>
             ))}
           </nav>
+          {/* Mobile menu button */}
+          <button
+            onClick={() => setOpen(!open)}
+            className="md:hidden text-gray-300 hover:text-white focus:outline-none"
+            aria-label="Toggle navigation"
+          >
+            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
         </div>
-      )}
-    </header>
+        {/* Mobile nav panel */}
+        {open && (
+          <nav className="md:hidden bg-black bg-opacity-90 backdrop-blur-md px-4 pt-2 pb-4 space-y-2">
+            {navItems.map(({ href, label }) => (
+              <Link
+                key={href}
+                href={href}
+                className="block text-gray-300 hover:text-white px-3 py-2 rounded-md"
+                onClick={() => setOpen(false)}
+              >
+                {label}
+              </Link>
+            ))}
+          </nav>
+        )}
+      </header>
+    </div>
   );
 }

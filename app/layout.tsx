@@ -1,25 +1,24 @@
-import './globals.css';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import '@/app/globals.css';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 export const metadata = {
-  title: 'AlynCoin | Quantum‑Resistant Blockchain',
-  description:
-    'Quantum-secure Layer‑1 blockchain with zk‑STARKs, post‑quantum signatures, and decentralized governance.',
+  title: 'AlynCoin – Quantum‑Resistant Layer‑1',
+  description: 'AlynCoin is a pioneering Layer‑1 chain combining post‑quantum signatures, zk‑STARK proofs and a hybrid PoW consensus to deliver unmatched security, scalability and privacy.',
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+/**
+ * Root layout wraps every page with the site header, footer and a dark
+ * background. The children prop is rendered inside a main element with
+ * a maximum width to keep content comfortably readable on large
+ * displays.
+ */
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className="min-h-screen flex flex-col bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100">
+    <html lang="en" className="dark">
+      <body>
         <Header />
-        <main className="flex-1 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto w-full">
-          {children}
-        </main>
+        <main className="mx-auto max-w-screen-xl">{children}</main>
         <Footer />
       </body>
     </html>
