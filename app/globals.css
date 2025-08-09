@@ -5,10 +5,12 @@
 /* Custom global styles */
 html,
 body {
-  @apply bg-white text-gray-800;
-}
-
-.dark html,
-.dark body {
+  /* Default to a dark theme across the site */
   @apply bg-gray-900 text-gray-100;
+  /* Apply a global background texture to emulate the old site’s dark ambience */
+  background-image: url('/assets/image8.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
 }

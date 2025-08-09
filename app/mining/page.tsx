@@ -20,25 +20,31 @@ export default function MiningPage() {
     { block: 20_000, reward: 0.0000 },
   ];
   return (
-    <section
-      className="relative py-10"
-      style={{
-        backgroundImage: "url('/assets/image9.png')",
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
-    >
-      <div className="absolute inset-0 bg-black/60" />
-      <div className="relative z-10 space-y-12">
-        <h1 className="text-3xl sm:text-4xl font-bold text-center">Mining & Emission</h1>
-        <p className="max-w-4xl mx-auto text-center text-gray-200">
-          AlynCoin uses a hybrid proof‑of‑work consensus combining <strong>BLAKE3</strong> and
-          <strong>Keccak</strong> hashing. This approach blends energy‑efficient hashing with
-          robust security. Difficulty adjusts dynamically via a linearly weighted moving
-          average (LWMA) algorithm, maintaining consistent block times even as network hash
-          power fluctuates.
-        </p>
-
+    <div className="space-y-12">
+      {/* Hero Section for Mining */}
+      <section
+        className="relative text-white py-32 px-6"
+        style={{
+          backgroundImage: "url('/assets/image9.png')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      >
+        <div className="absolute inset-0 bg-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-black/70" />
+        <div className="relative z-10 max-w-4xl mx-auto text-center">
+          <h1 className="text-4xl sm:text-5xl font-bold mb-6">Mining & Emission</h1>
+          <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
+            AlynCoin uses a hybrid proof‑of‑work consensus combining <strong>BLAKE3</strong> and <strong>Keccak</strong>
+            hashing. This approach blends energy‑efficient hashing with robust security. Difficulty
+            adjusts dynamically via a linearly weighted moving average (LWMA) algorithm, maintaining
+            consistent block times even as network hash power fluctuates.
+          </p>
+        </div>
+      </section>
+      {/* Mining features and chart */}
+      <div className="py-12 space-y-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-5xl mx-auto">
           <MiningCard
             icon={<Cpu className="h-8 w-8 text-primary" />}
@@ -61,14 +67,12 @@ export default function MiningPage() {
             description="Transaction fees are partially burned and partially allocated to the DAO treasury."
           />
         </div>
-
-        {/* Chart Section */}
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-semibold text-center mb-4">Block Reward Decay</h2>
           <div className="h-64">
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={emissionData} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
-                <CartesianGrid strokeDasharray="3 3" className="stroke-gray-400" />
+                <CartesianGrid strokeDasharray="3 3" className="stroke-gray-200 dark:stroke-gray-700" />
                 <XAxis dataKey="block" tickFormatter={(v) => v.toLocaleString()} />
                 <YAxis label={{ value: 'Reward (ALYN)', angle: -90, position: 'insideLeft' }} />
                 <Tooltip
@@ -80,18 +84,17 @@ export default function MiningPage() {
             </ResponsiveContainer>
           </div>
         </div>
-
         <div className="max-w-4xl mx-auto space-y-4">
           <h2 className="text-2xl font-semibold">Why Hybrid PoW?</h2>
-          <p className="text-gray-200">
+          <p className="text-gray-300">
             Combining two cryptographic hashes mitigates the risk of single‑algorithm breakthroughs and
             distributes mining hardware diversity. BLAKE3 provides a fast, energy‑efficient baseline,
-            while Keccak offers proven resistance against a range of cryptanalytic attacks. Together
-            they deliver a more balanced mining landscape than typical single‑hash networks.
+            while Keccak offers proven resistance against a range of cryptanalytic attacks. Together they
+            deliver a more balanced mining landscape than typical single‑hash networks.
           </p>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 

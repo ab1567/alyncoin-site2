@@ -1,8 +1,8 @@
 "use client";
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { useState } from 'react';
+import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 
 /**
@@ -15,34 +15,25 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const navItems = [
     { label: 'Home', href: '/' },
-    { label: 'About', href: '/about' },
     { label: 'Tokenomics', href: '/tokenomics' },
     { label: 'Governance', href: '/governance' },
     { label: 'Mining', href: '/mining' },
     { label: 'Progress', href: '/progress' },
-    { label: 'Downloads', href: '/downloads' },
   ];
   return (
-    <header className="sticky top-0 z-50 bg-black text-white border-b border-gray-800 shadow-md">
-      <div className="mx-auto max-w-7xl flex items-center justify-between px-4 py-4">
-        <Link href="/" className="flex items-center space-x-2 text-white hover:text-primary">
-          <Image
-            src="/assets/logo.png"
-            alt="AlynCoin logo"
-            width={48}
-            height={48}
-            className="h-12 w-12"
-            priority
-          />
-          <span className="text-2xl font-semibold tracking-tight">AlynCoin</span>
+    <header className="sticky top-0 z-50 bg-gray-900/90 border-b border-gray-800 shadow-md">
+      <div className="mx-auto max-w-7xl flex items-center justify-between px-4 py-3">
+        <Link href="/" className="flex items-center space-x-3">
+          <Image src="/assets/logo.png" alt="AlynCoin logo" width={40} height={40} className="h-10 w-10 object-contain" />
+          <span className="text-2xl font-semibold tracking-tight text-white">AlynCoin</span>
         </Link>
         {/* Desktop navigation */}
-        <nav className="hidden md:flex space-x-6 text-sm font-medium text-white">
+        <nav className="hidden md:flex space-x-6 text-sm font-medium">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="hover:text-primary transition-colors"
+              className="text-gray-300 hover:text-white transition-colors"
             >
               {item.label}
             </Link>
@@ -51,7 +42,7 @@ export default function Header() {
         {/* Mobile hamburger toggle */}
         <button
           type="button"
-          className="md:hidden inline-flex items-center justify-center rounded-md p-2 text-white focus:outline-none focus:ring-2 focus:ring-primary"
+          className="md:hidden inline-flex items-center justify-center rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-primary"
           aria-label="Toggle navigation menu"
           onClick={() => setOpen(!open)}
         >
@@ -60,13 +51,13 @@ export default function Header() {
       </div>
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden border-t border-gray-800 bg-black">
+        <div className="md:hidden border-t border-gray-800 bg-gray-900">
           <nav className="px-4 py-2 space-y-1">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="block px-3 py-2 rounded-md text-sm font-medium text-white hover:bg-gray-800"
+                className="block px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-gray-800"
                 onClick={() => setOpen(false)}
               >
                 {item.label}
