@@ -49,6 +49,14 @@ export default function HomePage() {
     },
   ];
 
+/**
+ * Home page for the AlynCoin site.
+ *
+ * Presents an overview of the project: high-level mission, core features,
+ * current progress, and ways to get involved. The design leverages Tailwind
+ * for responsive layout and lucide-react icons for visual cues.
+ */
+export default function HomePage() {
   return (
     <div className="flex flex-col space-y-32">
       {/* Hero Section */}
