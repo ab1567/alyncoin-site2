@@ -1,7 +1,8 @@
 "use client";
 
 import Link from 'next/link';
-import { ShieldCheck, Cpu, Layers, RefreshCcw, Users, FileBarChart, Globe, Rocket } from 'lucide-react';
+import ContactSection from '../components/ContactSection';
+import { ShieldCheck, Layers, RefreshCcw, Users, FileBarChart, Globe } from 'lucide-react';
 
 /**
  * Home page for the AlynCoin site.
@@ -14,49 +15,96 @@ export default function HomePage() {
   return (
     <div className="space-y-24 py-10">
       {/* Hero Section */}
-      <section className="flex flex-col items-center text-center pt-16 sm:pt-24 pb-20">
-        <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-4">
-          Quantum‑Ready Blockchain for the Next Era
-        </h1>
-        <p className="max-w-3xl text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-8">
-          AlynCoin is a pioneering Layer‑1 chain combining post‑quantum signatures, zk‑STARK proofs
-          and a hybrid PoW consensus to deliver unmatched security, scalability and privacy. Built
-          from the ground up for tomorrow’s world, it’s not another Ethereum fork—it’s a
-          community‑driven vision for the future of decentralized finance and identity.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4">
-          <Link
-            href="/tokenomics"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-white font-medium shadow hover:bg-primary-dark transition-colors"
-          >
-            Learn About Tokenomics
-          </Link>
-          <a
-            href="https://alyncoin.com/whitepaper.pdf"
-            className="inline-flex items-center justify-center rounded-md border border-primary px-6 py-3 text-primary font-medium shadow hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read Whitepaper
-          </a>
+      <section
+        className="relative flex flex-col items-center text-center pt-16 sm:pt-24 pb-20"
+        style={{
+          backgroundImage: "url('/assets/image1.png')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="relative z-10 max-w-3xl mx-auto text-white space-y-8">
+          <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight">
+            Quantum‑Ready Blockchain for the Next Era
+          </h1>
+          <p className="text-lg sm:text-xl text-gray-200">
+            AlynCoin is a pioneering Layer‑1 chain combining post‑quantum signatures, zk‑STARK proofs and a
+            hybrid PoW consensus to deliver unmatched security, scalability and privacy. Built from the ground
+            up for tomorrow’s world, it’s not another Ethereum fork—it’s a community‑driven vision for the
+            future of decentralized finance and identity.
+          </p>
+          <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center">
+            <Link
+              href="/tokenomics"
+              className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-white font-medium shadow hover:bg-primary-dark transition-colors"
+            >
+              Learn About Tokenomics
+            </Link>
+            <a
+              href="https://alyncoin.com/whitepaper.pdf"
+              className="inline-flex items-center justify-center rounded-md border border-primary px-6 py-3 text-primary font-medium shadow hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Read Whitepaper
+            </a>
+            <a
+              href="/downloads/pitch_deck.pdf"
+              className="inline-flex items-center justify-center rounded-md border border-primary px-6 py-3 text-primary font-medium shadow hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Pitch Deck
+            </a>
+            <a
+              href="/downloads/AlyncoinGPTresearch.pdf"
+              className="inline-flex items-center justify-center rounded-md border border-primary px-6 py-3 text-primary font-medium shadow hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GPT Research
+            </a>
+          </div>
         </div>
       </section>
 
       {/* Why Section */}
-      <section id="why" className="space-y-8">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center">Why AlynCoin?</h2>
-        <p className="max-w-4xl mx-auto text-center text-gray-600 dark:text-gray-300">
-          Born from years of research and engineering, AlynCoin is a fully custom blockchain built
-          for speed, privacy and resilience. Its modular cryptographic stack and zero‑knowledge
-          architecture ensure that your digital future remains secure—long after quantum computers
-          arrive.
-        </p>
+      <section
+        id="why"
+        className="relative py-24 text-center"
+        style={{
+          backgroundImage: "url('/assets/image2.png')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="relative z-10 space-y-8">
+          <h2 className="text-3xl sm:text-4xl font-bold">Why AlynCoin?</h2>
+          <p className="max-w-4xl mx-auto text-gray-300">
+            Born from years of research and engineering, AlynCoin is a fully custom blockchain built
+            for speed, privacy and resilience. Its modular cryptographic stack and zero‑knowledge
+            architecture ensure that your digital future remains secure—long after quantum computers
+            arrive.
+          </p>
+        </div>
       </section>
 
       {/* Features Section */}
-      <section id="features" className="space-y-12">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center">Key Features</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+      <section
+        id="features"
+        className="relative py-24"
+        style={{
+          backgroundImage: "url('/assets/image3.png')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="relative z-10 space-y-12">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center">Key Features</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
           <FeatureCard
             icon={<ShieldCheck className="h-8 w-8 text-primary" />}
             title="Quantum‑Secure Signatures"
@@ -87,13 +135,24 @@ export default function HomePage() {
             title="NFT & Interoperability"
             description="Native NFT support is live and atomic swaps are planned to enable cross‑chain trading."
           />
+          </div>
         </div>
       </section>
 
       {/* Progress Section */}
-      <section id="progress" className="space-y-8">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center">Current Progress</h2>
-        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+      <section
+        id="progress"
+        className="relative py-24"
+        style={{
+          backgroundImage: "url('/assets/image4.png')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="relative z-10 space-y-8">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center">Current Progress</h2>
+          <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
           <ProgressItem
             title="Blockchain Core"
             status="✅ Complete"
@@ -125,33 +184,11 @@ export default function HomePage() {
             description="Official miner release coming September 2025—join our community to get early access."
           />
         </div>
-      </section>
-
-      {/* Call to Action Section */}
-      <section id="contact" className="space-y-6 text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold">Get Involved</h2>
-        <p className="max-w-3xl mx-auto text-gray-600 dark:text-gray-300">
-          AlynCoin is a private, community‑driven initiative. We selectively onboard developers,
-          researchers, investors, and early supporters who share our mission. If you’d like to
-          contribute to the quantum‑secure future of blockchain, we’d love to hear from you.
-        </p>
-        <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <a
-            href="mailto:contact@alyncoin.com"
-            className="inline-block bg-primary text-white font-medium px-6 py-3 rounded-md shadow hover:bg-primary-dark transition-colors"
-          >
-            Email Us
-          </a>
-          <a
-            href="https://github.com/ab1567/alyncoin-site"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block border border-primary text-primary font-medium px-6 py-3 rounded-md shadow hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors"
-          >
-            View on GitHub
-          </a>
         </div>
       </section>
+
+      {/* Contact Section */}
+      <ContactSection />
     </div>
   );
 }
@@ -161,11 +198,11 @@ export default function HomePage() {
  */
 function FeatureCard({ icon, title, description }: { icon: React.ReactElement; title: string; description: string; }) {
   return (
-    <div className="flex items-start space-x-4 p-4 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm">
+    <div className="flex items-start space-x-4 p-4 rounded-lg border border-gray-700 bg-gray-800 shadow-sm">
       <div className="shrink-0">{icon}</div>
       <div>
         <h3 className="text-lg font-semibold mb-1">{title}</h3>
-        <p className="text-sm text-gray-600 dark:text-gray-400">{description}</p>
+        <p className="text-sm text-gray-400">{description}</p>
       </div>
     </div>
   );
@@ -176,12 +213,12 @@ function FeatureCard({ icon, title, description }: { icon: React.ReactElement; t
  */
 function ProgressItem({ title, status, description }: { title: string; status: string; description: string; }) {
   return (
-    <div className="p-4 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm space-y-2">
+    <div className="p-4 rounded-lg border border-gray-700 bg-gray-800 shadow-sm space-y-2">
       <div className="flex items-center justify-between">
         <h3 className="text-lg font-semibold">{title}</h3>
         <span className="text-sm font-medium text-primary">{status}</span>
       </div>
-      <p className="text-sm text-gray-600 dark:text-gray-400">{description}</p>
+      <p className="text-sm text-gray-400">{description}</p>
     </div>
   );
 }
