@@ -23,10 +23,17 @@ export default function Header() {
     { label: 'Downloads', href: '/downloads' },
   ];
   return (
-    <header className="sticky top-0 z-50 backdrop-blur bg-black/80 text-white border-b border-gray-800">
+    <header className="sticky top-0 z-50 bg-black text-white border-b border-gray-800 shadow-md">
       <div className="mx-auto max-w-7xl flex items-center justify-between px-4 py-4">
         <Link href="/" className="flex items-center space-x-2 text-white hover:text-primary">
-          <Image src="/assets/logo.png" alt="AlynCoin logo" width={40} height={40} />
+          <Image
+            src="/assets/logo.png"
+            alt="AlynCoin logo"
+            width={48}
+            height={48}
+            className="h-12 w-12"
+            priority
+          />
           <span className="text-2xl font-semibold tracking-tight">AlynCoin</span>
         </Link>
         {/* Desktop navigation */}
