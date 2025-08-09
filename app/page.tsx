@@ -18,7 +18,7 @@ export default function HomePage() {
       <section
         className="relative flex flex-col items-center text-center pt-16 sm:pt-24 pb-20"
         style={{
-          backgroundImage: "url('/assets/image1.png')",
+          backgroundImage: "url('/assets/image3.png')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
@@ -48,14 +48,6 @@ export default function HomePage() {
               rel="noopener noreferrer"
             >
               Read Whitepaper
-            </a>
-            <a
-              href="/downloads/pitch_deck.pdf"
-              className="inline-flex items-center justify-center rounded-md border border-primary px-6 py-3 text-primary font-medium shadow hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Pitch Deck
             </a>
             <a
               href="/downloads/AlyncoinGPTresearch.pdf"
@@ -96,7 +88,7 @@ export default function HomePage() {
         id="features"
         className="relative py-24"
         style={{
-          backgroundImage: "url('/assets/image3.png')",
+          backgroundImage: "url('/assets/image4.png')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
@@ -144,7 +136,7 @@ export default function HomePage() {
         id="progress"
         className="relative py-24"
         style={{
-          backgroundImage: "url('/assets/image4.png')",
+          backgroundImage: "url('/assets/image5.png')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
